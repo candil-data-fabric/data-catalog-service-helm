@@ -11,7 +11,7 @@ image:
   # This sets the pull policy for images.
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.0"
+  tag: 1.1.1
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -21,25 +21,23 @@ fullnameOverride: ""
 
 # Definition of environment variables.
 envVars:
-  - name: CONTEXT_BROKER_URL
-    value: orion-ld:8080
+  - name: INTERNAL_CONTEXT_BROKER_URL
+    value: http://orion-ld:1026/ngsi-ld/v1
+  - name: PUBLIC_CONTEXT_BROKER_URL
+    value: http://orion-ld:1026/ngsi-ld/v1
   - name: ORGANIZATION_ID
-    value: CANDIL    
+    value: NCSRD
   - name: DOMAIN_ID
     value: Default
-  - name: KAFKA_BROKER
-    value: kafka:9092
-  - name: KAFKA_TOPIC
-    value: knowledge-graphs
-  # - name: KAFKA_GROUP_ID
-  #   value:
+  - name: LOGLEVEL
+    value: INFO
 
 #This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
 serviceAccount:
   # Specifies whether a service account should be created
-  create: true
+  create: false
   # Automatically mount a ServiceAccount's API credentials?
-  automount: true
+  automount: false
   # Annotations to add to the service account
   annotations: {}
   # The name of the service account to use.
@@ -47,7 +45,7 @@ serviceAccount:
   name: ""
 
 # This is for setting Kubernetes Annotations to a Pod.
-# For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/ 
+# For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
 podAnnotations: {}
 # This is for setting Kubernetes Labels to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
@@ -67,9 +65,9 @@ securityContext: {}
 # This is for setting up a service more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/
 service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
-  type: NodePort
+  type: LoadBalancer
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 80
+  port: 8080
   targetPort: 80
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
