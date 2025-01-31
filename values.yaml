@@ -11,7 +11,7 @@ image:
   # This sets the pull policy for images.
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: 1.1.1
+  tag: 1.1.2
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -26,11 +26,11 @@ envVars:
   - name: PUBLIC_CONTEXT_BROKER_URL
     value: http://orion-ld:1026/ngsi-ld/v1
   - name: ORGANIZATION_ID
-    value: NCSRD
+    value: CANDIL
   - name: DOMAIN_ID
     value: Default
   - name: LOGLEVEL
-    value: INFO
+    value: DEBUG
 
 #This section builds out the service account more information can be found here: https://kubernetes.io/docs/concepts/security/service-accounts/
 serviceAccount:
