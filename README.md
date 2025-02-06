@@ -1,6 +1,6 @@
 # Data Catalog Service Helm Chart
 
-## Current version: 1.1.2 (January 31st, 2025).
+## Current version: 1.1.2 (February 6th, 2025).
 
 ## Installation
 
