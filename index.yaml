@@ -3,9 +3,9 @@ entries:
   data-catalog-service:
   - apiVersion: v2
     appVersion: 1.1.2
-    created: "2025-01-31T10:32:10.038985409Z"
+    created: "2025-02-06T11:46:01.106516959Z"
     description: Data Catalog Service - A Helm Chart for Kubernetes
-    digest: 4389fa14d19a6a484165525d44436e1326e31e6725df1e839053659249f9e32a
+    digest: e8466a6d5c9c3a8396de11924f378cc383108178cae7eadee12335b24f65acba
     maintainers:
     - name: Ignacio Domínguez Martínez-Casanueva
     - name: David Martínez García
@@ -16,4 +16,4 @@ entries:
     urls:
     - https://candil-data-fabric.github.io/data-catalog-service-helm/data-catalog-service-1.1.2.tgz
     version: 1.1.2
-generated: "2025-01-31T10:32:10.037264922Z"
+generated: "2025-02-06T11:46:01.105838427Z"
